@@ -1,22 +1,7 @@
 <h1>Edit <%= @task.title %></h1>
 
-<%= form_for(@task) do |f| %>
-  <div class="form-group">
-    <%= f.label :title %>
-    <%= f.text_field :title, class: 'form-control' %>
-  </div>
-  <div class="form-group">
-    <%= f.label :details %>
-    <%= f.text_area :details, class: 'form-control' %>
-  </div>
+<%= render 'form', task: @task %>
 
-  <div class="form-check mb-3">
-    <%= f.check_box :completed, class: 'form-check-input' %>
-    <%= f.label :completed, class: 'form-check-label' %>
-  </div>
-  <%= f.submit class: 'btn btn-primary' %>
-<% end %>
-<hr>
 
 <%= link_to tasks_path do %>
   <i class="fa fa-chevron-left" aria-hidden="true"></i> Back to tasks
