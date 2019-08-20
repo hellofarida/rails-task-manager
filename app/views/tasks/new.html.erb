@@ -1,0 +1,21 @@
+<h1>New Task</h1>
+<hr>
+<%= form_for(@task) do |f| %>
+  <div class="form-group">
+    <%= f.label :title %>
+    <%= f.text_field :title, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :details %>
+    <%= f.text_area :details, class: 'form-control' %>
+  </div>
+  <%= f.submit class: 'btn btn-primary w-100' %>
+<% end %>
+<hr>
+
+<%= link_to tasks_path do %>
+  <i class="fa fa-chevron-left" aria-hidden="true"></i> Back to tasks
+<% end %>
+
+<!-- Alternate way
+<%= link_to "<i class='fa fa-chevron-left' aria-hidden='true'></i> Back to tasks".html_safe, tasks_path %> -->
